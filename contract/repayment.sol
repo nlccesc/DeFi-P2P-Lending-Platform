@@ -10,12 +10,16 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 contract MyToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, ERC20PausableUpgradeable, AccessControlUpgradeable, UUPSUpgradeable {
+    enum State { Active, Paused, Upgraded }
+    State public state;
+
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant UPGRADER_ROLE = keccak256("UPGRADER_ROLE");
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
+        state = State.Active; // Initialize state to Active
     }
 
     function initialize(address defaultAdmin, address pauser, address upgrader)
@@ -33,11 +37,15 @@ contract MyToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, E
     }
 
     function pause() public onlyRole(PAUSER_ROLE) {
+        require(state == State.Active, "Token must be in Active state to pause");
         _pause();
+        state = State.Paused; // Update state to Paused
     }
 
     function unpause() public onlyRole(PAUSER_ROLE) {
+        require(state == State.Paused, "Token must be in Paused state to unpause");
         _unpause();
+        state = State.Active; // Update state to Active
     }
 
     function _authorizeUpgrade(address newImplementation)
