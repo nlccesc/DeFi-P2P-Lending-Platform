@@ -8,7 +8,7 @@ abi_paths = {
 
 contract_addresses = {
     'disbursement': '0x5FD6eB55D12E759a21C09eF703fe0CBa1DC9d88D',
-    'interest calculation': '0xd2a5bC10698FD955D1Fe6cb468a17809A08fd005',
+    'interest calculation': '0xd9145CCE52D386f254917e481eB44e9943F39138',
     'loan agreement': '0x0fC5025C764cE34df352757e82f7B5c4Df39A836',
     'repayment': '0x9d83e140330758a8fFD07F8Bd73e86ebcA8a5692',
     'smart contract': '0xd9145CCE52D386f254917e481eB44e9943F39138'
