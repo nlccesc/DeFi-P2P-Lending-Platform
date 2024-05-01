@@ -10,7 +10,7 @@ contract_addresses = {
     'disbursement': '0x5FD6eB55D12E759a21C09eF703fe0CBa1DC9d88D',
     'interest calculation': '0xd9145CCE52D386f254917e481eB44e9943F39138',
     'loan agreement': '0xd9145CCE52D386f254917e481eB44e9943F39138',
-    'repayment': '0x9d83e140330758a8fFD07F8Bd73e86ebcA8a5692',
+    'repayment': '0xd9145CCE52D386f254917e481eB44e9943F39138',
     'smart contract': '0xd9145CCE52D386f254917e481eB44e9943F39138'
 }
 
