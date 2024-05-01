@@ -11,7 +11,7 @@ contract_addresses = {
     'interest calculation': '0xd9145CCE52D386f254917e481eB44e9943F39138',
     'loan agreement': '0xd9145CCE52D386f254917e481eB44e9943F39138',
     'repayment': '0xd9145CCE52D386f254917e481eB44e9943F39138',
-    'smart contract': '0xd9145CCE52D386f254917e481eB44e9943F39138'
+    'smart contract': '0x7EF2e0048f5bAeDe046f6BF797943daF4ED8CB47'
 }
 
 private_key = "iEtLPC1tdEV6PfX53l/qQftvzuoUqG8sjAZUFWRhjOc18FRNc/x7Iw"
