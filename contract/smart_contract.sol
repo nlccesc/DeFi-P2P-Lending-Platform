@@ -10,9 +10,13 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 contract MyToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, ERC20PausableUpgradeable, OwnableUpgradeable, UUPSUpgradeable {
+    enum State { Active, Paused, Upgraded }
+    State public state;
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
+        state = State.Active; // Initialize state to Active
     }
 
     function initialize(address initialOwner) initializer public {
@@ -24,14 +28,19 @@ contract MyToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, E
     }
 
     function pause() public onlyOwner {
+        require(state == State.Active, "Token must be in Active state to pause");
         _pause();
+        state = State.Paused; // Update state to Paused
     }
 
     function unpause() public onlyOwner {
+        require(state == State.Paused, "Token must be in Paused state to unpause");
         _unpause();
+        state = State.Active; // Update state to Active
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
+        require(state == State.Active, "Token must be in Active state to mint");
         _mint(to, amount);
     }
 
