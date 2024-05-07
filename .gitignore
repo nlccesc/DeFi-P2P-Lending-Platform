@@ -4,6 +4,7 @@
 
 # Environment files
 .venv/
+.venv-old/
 
 # Cache files
 __pycache__/
