@@ -1,5 +1,7 @@
 # DeFi (Backend)
 
+The backend project.
+
 ## Project Structure
 
 ### `abi` folder
@@ -10,15 +12,15 @@ Contents: ABI files for disbursement, interest calculation, loan agreement, repa
 
 ### `contract` folder
 
-This folder contains the solidity files (.sol) which is used for developing smart contracts that run on the Ethereum Virtual Machine (EVM). This allows for a clear record of transactions. These contracts are done to facilitate the loan agreement, repayment, etc.
+This folder contains the solidity files (`.sol`) which is used for developing smart contracts that run on the Ethereum Virtual Machine (EVM). This allows for a clear record of transactions. These contracts are done to facilitate the loan agreement, repayment, etc.
 
 ### `dict.py` file
 
-Some test cases
+Some test cases.
 
 ### `dict2.py` file
 
-Some definitions that is used in interaction.py
+Some definitions that is used in `interaction.py`.
 
 ### `interface.py` file
 
