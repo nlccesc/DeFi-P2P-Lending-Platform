@@ -1,4 +1,6 @@
-FROM mcr.microsoft.com/windows-cssc/python:3.11-nanoserver-ltsc2019
+FROM python:3.12-alpine
+
+# TODO: Fix pip installation not working
 
 WORKDIR /app
 COPY requirements.txt ./
