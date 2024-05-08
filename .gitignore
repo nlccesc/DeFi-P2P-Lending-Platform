@@ -1,0 +1,15 @@
+# IDE configurations
+.vs/
+.idea/
+
+# Environment files
+.venv/
+.venv-old/
+
+# Cache files
+__pycache__/
+
+# Miscellaneous files
+.DS_Store
+Desktop.ini
+Thumbs.db
